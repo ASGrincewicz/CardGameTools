@@ -1,3 +1,4 @@
+using Base;
 using Interfaces;
 using UnityEditor;
 using UnityEngine;
@@ -9,7 +10,7 @@ namespace Editor
         private static EditorWindow _window;
         private static string Title { get; set; } = "Card Editor";
 
-        IEditableAsset ICustomEditorWindow.LoadedAsset { get; set; }
+        EditableAsset ICustomEditorWindow.LoadedAsset { get; set; }
 
         Rect ICustomEditorWindow.MainAreaRect { get; set; }
 
@@ -31,7 +32,7 @@ namespace Editor
             throw new System.NotImplementedException();
         }
 
-        void ICustomEditorWindow.OpenInEditor(IEditableAsset asset)
+        void ICustomEditorWindow.OpenInEditor(EditableAsset asset)
         {
             throw new System.NotImplementedException();
         }
@@ -60,7 +61,7 @@ namespace Editor
             throw new System.NotImplementedException();
         }
 
-        void ICustomEditorWindow.LoadAssetData(IEditableAsset asset)
+        void ICustomEditorWindow.LoadAssetData(EditableAsset asset)
         {
             throw new System.NotImplementedException();
         }
