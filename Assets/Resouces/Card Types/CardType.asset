@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f31ddd1285f041edaa5414f02d5c79ae, type: 3}
   m_Name: CardType
   m_EditorClassIdentifier: 
-  _assetData:
-    _name: 
-    _description: 
-    _type: 
+  _cardTypeData:
+    _name: Default
+    _statsConfig:
+    - _name: Health
+      _max: 100
+      _min: 0
+      _description: Hit Points

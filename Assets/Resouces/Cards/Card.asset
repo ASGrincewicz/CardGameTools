@@ -12,3 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21feee7a00878405fb27513726fbdecd, type: 3}
   m_Name: Card
   m_EditorClassIdentifier: 
+  _cardData:
+    _name: Test Card
+    _artwork: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+  _rarityAsset: {fileID: 11400000, guid: 46df93c90873947a393770ad5adfb443, type: 2}
+  _cardTypeAsset: {fileID: 11400000, guid: e9518b8a40d014ce1a34ab655a51a3ca, type: 2}
+  _stats:
+  - _name: Attack
+    _value: 5
+    _description: Damage

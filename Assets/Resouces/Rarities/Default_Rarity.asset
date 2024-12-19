@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Default_Rarity
   m_EditorClassIdentifier: 
   _rarityData:
-    _name: 
+    _name: Default
