@@ -4,17 +4,17 @@ using UnityEngine;
 namespace Data
 {
     [System.Serializable]
-    public sealed class CardStat: AssetData
+    public sealed class KeywordData: AssetData
     {
         // Name field is inherited.
-        [SerializeField] private int _value;
         [SerializeField] private string _description;
+        [SerializeField] private float _weight;
 
-        public CardStat(string name, int value, string description = "")
+        public KeywordData(string name, string description, float weight = 0.0f)
         {
             _name = name;
-            _value = value;
             _description = description;
+            _weight = weight;
         }
     }
 }
