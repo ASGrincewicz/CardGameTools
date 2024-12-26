@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6374708eeb5f4d338c30493da546e692, type: 3}
   m_Name: Keyword_Manager
   m_EditorClassIdentifier: 
-  _assets: []
+  _assets:
+  - {fileID: 11400000, guid: 57984bca104a249fbb41e021e43da7e7, type: 2}

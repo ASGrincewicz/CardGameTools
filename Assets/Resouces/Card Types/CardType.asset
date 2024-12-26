@@ -17,5 +17,13 @@ MonoBehaviour:
     _statsConfig:
     - _name: Health
       _max: 100
-      _min: 0
+      _min: 5
       _description: Hit Points
+    - _name: Attack
+      _max: 10
+      _min: 1
+      _description: Damage Dealth
+    - _name: Defense
+      _max: 5
+      _min: 0
+      _description: Damage Reduction

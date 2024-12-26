@@ -5,7 +5,8 @@ using UnityEngine;
 namespace Interfaces
 {
     public interface ICustomEditorWindow
-    { protected EditableAsset LoadedAsset { get; set;}
+    { 
+        protected EditableAsset LoadedAsset { get; set;}
         protected Rect MainAreaRect { get; set; }
         protected Vector2 ScrollPosition { get; set; }
         
