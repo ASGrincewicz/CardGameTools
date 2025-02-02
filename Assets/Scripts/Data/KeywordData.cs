@@ -4,9 +4,9 @@ using UnityEngine;
 namespace Data
 {
     [System.Serializable]
-    public sealed class KeywordData: AssetData
+    public sealed class KeywordData
     {
-        // Name field is inherited.
+        [SerializeField] private string _name;
         [SerializeField] private string _description;
         [SerializeField] private float _weight;
 

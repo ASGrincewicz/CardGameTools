@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 namespace Base
 {
@@ -7,7 +7,7 @@ namespace Base
     {
         [SerializeField] protected string _name;
         
-        public virtual string Name { get; set; }
+        public virtual string AssetName { get; set; }
        
     }
-}
+}*/

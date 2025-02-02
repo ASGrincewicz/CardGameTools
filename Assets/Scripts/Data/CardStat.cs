@@ -4,9 +4,9 @@ using UnityEngine;
 namespace Data
 {
     [System.Serializable]
-    public sealed class CardStat: AssetData
+    public sealed class CardStat
     {
-        // Name field is inherited.
+        [SerializeField] private string _name;
         [SerializeField] private int _value;
         [SerializeField] private string _description;
 

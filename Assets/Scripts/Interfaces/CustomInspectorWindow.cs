@@ -3,12 +3,16 @@ using UnityEngine;
 
 namespace Interfaces
 {
-    public interface ICustomInspectorWindow
+    public class CustomInspectorWindow: Editor
     {
-        protected void OnEnable(){}
-        protected void OnDisable(){}
-        protected void OnInspectorGUI(){}
-        protected void DrawProperties(){}
+        protected virtual void OnEnable(){}
+        protected virtual void DrawProperties(){}
+        protected virtual void DrawControlButtons(){}
+
+        protected virtual SerializedProperty GetProperty(string propertyName)
+        {
+            return serializedObject.FindProperty(propertyName);
+        }
 
         protected void DrawLabel((string, string) label)
         {
@@ -98,7 +102,6 @@ namespace Interfaces
                 GUILayout.EndHorizontal();
             }
         }
-        protected void DrawControlButtons(){}
 
         protected void DrawSeparator()
         {
@@ -107,6 +110,6 @@ namespace Interfaces
             GUILayout.Space(10);
         }
 
-        protected extern SerializedProperty GetProperty(string propertyName);
+        
     }
 }
