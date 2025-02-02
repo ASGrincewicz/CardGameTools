@@ -10,10 +10,10 @@ namespace DataConfigs
     {
         [SerializeField] private CardData _cardData;
         [SerializeField] private string _cardName;
-        [HideInInspector][SerializeField] private Texture2D _cardArtwork;
-        [SerializeField] private RarityAsset _rarityAsset;
+        [SerializeField] private Texture2D _cardArtwork;
+        [SerializeField] private RarityData _rarityData;
         [SerializeField] private string _rarityName;
-        [SerializeField] private CardTypeAsset _cardTypeAsset;
+        [SerializeField] private CardTypeData _cardTypeData;
         [SerializeField] private string _cardTypeName;
         [ContextMenuItem("Set Stats", "SetStats")]
         [SerializeField] private List<CardStat> _stats;
@@ -34,28 +34,28 @@ namespace DataConfigs
             get { return _cardData.Artwork; }
             set { _cardData.Artwork = value; }
         }
-        public RarityAsset RarityAsset
+        public RarityData RarityData
         {
-            get { return _rarityAsset; }
-            set { _rarityAsset = value; }
+            get { return _rarityData; }
+            set { _rarityData = value; }
         }
 
         public string RarityName
         {
-            get { return _rarityAsset.RarityData.Name; }
-            set { _rarityAsset.RarityData.Name = value; }
+            get { return RarityData.Name; }
+            set { RarityData.Name = value; }
         }
 
-        public CardTypeAsset CardTypeAsset
+        public CardTypeData CardTypeData
         {
-            get { return _cardTypeAsset; }
-            set { _cardTypeAsset = value; }
+            get { return _cardTypeData; }
+            set { _cardTypeData = value; }
         }
         
         public string CardTypeName
         {
-            get { return _cardTypeAsset.CardTypeData.Name; }
-            set { _cardTypeAsset.CardTypeData.Name = value; }
+            get { return CardTypeData.Name; }
+            set { CardTypeData.Name = value; }
         }
         public List<CardStat> Stats
         {
@@ -72,13 +72,13 @@ namespace DataConfigs
         
         public void SetStats()
         {
-            if (ReferenceEquals(CardTypeAsset, null))
+            if (ReferenceEquals(CardTypeData, null))
             {
                 return;
             }
             Stats = new List<CardStat>();
 
-            foreach (StatData stat in CardTypeAsset.CardTypeData.StatsConfig)
+            foreach (StatData stat in CardTypeData.StatsConfig)
             {
                 Stats.Add(new CardStat(stat.Name,stat.CheckIfStatInRange(0),stat.Description));
             }
