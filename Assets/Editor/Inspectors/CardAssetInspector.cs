@@ -28,9 +28,11 @@ namespace Editor.Inspectors
         private SerializedProperty CardTypeAsset { get; set; }
         private SerializedProperty CardTypeName { get; set; }
         private SerializedProperty Stats { get; set; }
+
+        private bool _isBaseEnabled = false;
         protected override void OnEnable()
         {
-            //CardData = serializedObject.FindProperty(CardDataPropertyName);
+            CardData = serializedObject.FindProperty(CardDataPropertyName);
             CardName = serializedObject.FindProperty(CardNamePropertyName);
             CardArtwork = serializedObject.FindProperty(CardArtworkPropertyName);
             RarityAsset = serializedObject.FindProperty(RarityAssetPropertyName);
@@ -42,7 +44,10 @@ namespace Editor.Inspectors
 
         public override void OnInspectorGUI()
         {
-            base.OnInspectorGUI();
+            if (_isBaseEnabled)
+            {
+                base.OnInspectorGUI();
+            }
             serializedObject.Update();
             CardAsset asset = (CardAsset) target;
            //asset.GetInfo();
@@ -60,14 +65,15 @@ namespace Editor.Inspectors
            DrawLabel("Card Name", $"{CardName.stringValue}");
            DrawLabel("Rarity", $"{RarityName.stringValue}");
            DrawLabel("Card Type", $"{CardTypeName.stringValue}");
+           EditorGUILayout.ObjectField(CardArtwork, typeof(Texture2D), new GUIContent("Card Artwork"));
            
         }
 
         protected override void DrawControlButtons()
         {
-            if (GUILayout.Button("Test"))
+            if (GUILayout.Button("Toggle Default Inspector"))
             {
-                Debug.Log("test");
+                _isBaseEnabled = !_isBaseEnabled;
             }
         }
     }

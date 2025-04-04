@@ -34,6 +34,9 @@ namespace DataConfigs
             get { return _cardData.Artwork; }
             set { _cardData.Artwork = value; }
         }
+        // The Rarity Data isn't being assigned with the current setup.
+        // I might need to convert to a scriptable object.  Same goes for the 
+        // other data setups.
         public RarityData RarityData
         {
             get { return _rarityData; }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardType
   m_EditorClassIdentifier: 
   _cardTypeData:
-    _name: Default
+    _name: Base
     _statsConfig:
     - _name: Health
       _max: 100
